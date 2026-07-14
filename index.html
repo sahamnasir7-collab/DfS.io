@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dialogue for Sustainability (DfS) — GIZ Pakistan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E8531E; --orange-dk:#C8410F; --cyan:#3BA9DC;
+    --social:#E8531E; --econ:#1577B5; --eco:#3FA66A;
+    --ink:#1B2A38; --body:#54646F; --line:#E3E8ED;
+    --mist:#F5F7F9; --paper:#fff; --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--mist);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;background:var(--paper);box-shadow:0 20px 60px rgba(27,42,56,.10)}
+
+  .top{display:flex;justify-content:space-between;align-items:center;padding:20px 34px;border-bottom:1px solid var(--line);gap:16px;flex-wrap:wrap}
+  .top img{height:52px}
+  .top .pr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--body);font-weight:600;text-align:right}
+
+  .hero{padding:44px 34px;background:linear-gradient(135deg,#FDF1EC 0%,#EEF6FB 100%);position:relative;overflow:hidden}
+  .hero .kick{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+  .hero h1{font-size:clamp(30px,4.6vw,44px);font-weight:800;line-height:1.08;letter-spacing:-.02em;max-width:20ch}
+  .hero p{margin-top:16px;font-size:16.5px;color:var(--body);max-width:60ch}
+  .pillars{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .pil{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:40px;padding:8px 16px;font-size:13.5px;font-weight:600}
+  .pil i{width:10px;height:10px;border-radius:50%;display:block}
+
+  .sec{padding:40px 34px;border-top:1px solid var(--line)}
+  .sec.alt{background:var(--mist)}
+  .kick{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:7px}
+  h2{font-size:25px;font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
+  p.body{color:var(--body);font-size:15.5px;margin-bottom:12px;max-width:74ch}
+  p.body b{color:var(--ink)}
+
+  /* results */
+  .rgroup{margin-bottom:24px}
+  .rgroup:last-child{margin-bottom:0}
+  .rgroup h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:9px}
+  .rgroup h3 i{width:9px;height:9px;border-radius:2px;display:block}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;border-top:3px solid var(--line)}
+  .stat.s{border-top-color:var(--social)}.stat.e{border-top-color:var(--econ)}.stat.v{border-top-color:var(--eco)}
+  .stat .n{font-size:30px;font-weight:800;line-height:1}
+  .stat.s .n{color:var(--social)}.stat.e .n{color:var(--econ)}.stat.v .n{color:var(--eco)}
+  .stat .l{font-size:13px;color:var(--body);margin-top:6px;line-height:1.4}
+  .envgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .env{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;border-left:3px solid var(--eco)}
+  .env .h{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--eco);margin-bottom:6px}
+  .env .v{font-size:16px;font-weight:700}
+  .env .v em{font-style:normal;color:var(--body);font-weight:500}
+  .env .d{font-size:12.5px;color:var(--body);margin-top:3px}
+
+  /* how it works */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+  .fstep{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;position:relative}
+  .fstep .fn{width:26px;height:26px;border-radius:50%;background:var(--orange);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+  .fstep h4{font-size:14px;font-weight:700;margin-bottom:4px}
+  .fstep p{font-size:12.5px;color:var(--body);line-height:1.45}
+  .dur{display:inline-block;background:var(--ink);color:#fff;font-size:12px;font-weight:600;border-radius:40px;padding:6px 14px}
+
+  /* six steps */
+  .six{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .six .st{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start}
+  .six .sn{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}
+  .six .sv{font-size:15px;font-weight:700;line-height:1.25;margin-top:2px}
+  .six .num{font-size:22px;font-weight:800;color:var(--line);line-height:1;flex:0 0 auto}
+
+  /* effective */
+  .eff{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ecard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;border-top:3px solid var(--orange)}
+  .ecard .en{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+  .ecard h4{font-size:16px;font-weight:800;margin-bottom:7px;line-height:1.25}
+  .ecard p{font-size:13.5px;color:var(--body);line-height:1.5}
+
+  .tiers{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+  .tiers span{background:var(--mist);border:1px solid var(--line);border-radius:6px;padding:5px 11px;font-size:12.5px;font-weight:600}
+
+  .cta{background:var(--ink);color:#fff;padding:38px 34px;text-align:center}
+  .cta h2{color:#fff;margin-bottom:8px}
+  .cta p{color:#A9BAC6;font-size:15px;max-width:56ch;margin:0 auto 20px}
+  .cbtn{display:inline-flex;flex-direction:column;gap:3px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 26px}
+  .cbtn .cn{font-size:16px;font-weight:700}
+  .cbtn .cs{font-size:12.5px;color:#A9BAC6}
+  .cbtn a{color:#fff;text-decoration:none;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,.3)}
+
+
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 34px;border-bottom:1px solid var(--line);gap:16px;flex-wrap:wrap;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);z-index:20}
+  .nav .brand img{height:44px;display:block}
+  .nav .links{display:flex;gap:6px;align-items:center}
+  .nav .links a{font-size:13.5px;font-weight:600;color:var(--body);text-decoration:none;padding:8px 14px;border-radius:8px;transition:.15s}
+  .nav .links a:hover{background:var(--mist);color:var(--ink)}
+  .nav .links a.on{background:var(--ink);color:#fff}
+  .heroBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .btnP{background:var(--ink);color:#fff;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;text-decoration:none;transition:.15s}
+  .btnP:hover{background:#000}
+  .btnS{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:12px 20px;font-size:14px;font-weight:600;text-decoration:none;transition:.15s}
+  .btnS:hover{border-color:var(--ink)}
+  .findBox{background:var(--ink);color:#fff;border-radius:14px;padding:26px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .findBox h3{font-size:20px;font-weight:800;margin-bottom:4px}
+  .findBox p{font-size:14px;color:#A9BAC6;max-width:52ch}
+  .findBox a{background:#fff;color:var(--ink);border-radius:10px;padding:12px 20px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+  .foot{background:#12222F;color:#8FA2B0;padding:20px 34px;font-size:11.5px;line-height:1.5;text-align:center}
+  .foot b{color:#fff}
+
+  @media(max-width:860px){
+    .stats,.flow,.six,.eff,.envgrid{grid-template-columns:1fr}
+    .top,.sec,.hero,.cta,.foot{padding-left:20px;padding-right:20px}
+  }
+  @media print{
+    @page{size:A4;margin:10mm}
+    body{background:#fff}.wrap{box-shadow:none}
+    .stat,.fstep,.ecard,.six .st,.env,.cbtn{break-inside:avoid}
+    .hero,.cta,.foot,.fstep .fn,.dur,.stat{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMcAAABxCAIAAADu9CD5AAAVC0lEQVR42u1dfVAVV5a//brfJzw1COu4gG6CDBp0QuGYyOJmLD8oxwSTsTSpjAoVmcSgmx00WSelFVJoSW02KkQnEmdjEsQklWyKyYg6FhpLMyI6DqyZBAN5mK+HkxjIU3zwPrtf7x+nuTz6dd/Xr3ko0XuKP1C6+957+nfP1z3nNCOKIqJEKa5koCygRFFFiaKKEkUVJUoUVZRGKXG3zEpCPV03dwKMPYkx26Je1tUfJPw1yczauB/9VmdumcjC9aKMm8nHsSmJ209EosrDhy5e85++4vlzV99n1/xRn7Nr9sSHJ9uprKKEmLEpiZVHZJD6W4+31nHtT9+4qQakpBdS9iT8Px987d56obvbx1O7ilIcINXVH9x4/srpKx5qrVOKD6TedFwrb/2esoWiKj6Q4kXx9xddOz/9gbKFoipukCo6dZlqvXCiUVA9lLCxFiu+rRe6KaSorNJJbPpUbtYiLvtfDZOm4SBCddsPb3x+Td8DH5qkEJdKS+Aoqn4cNGb/pZF4bHuvX6MtNW2cuXRq0tRxpkTO8BMbxzEMlVWUFIgXxRUnL2vB07aZ//TzZCvVgJSi04HO3qhxzjfvT503MYHaVZQ0kYcPRQ1N1c9Pv91EFPUBh0V/6LhKIUVRFWdBRTbS37w/9XaGFEWVHmq83E+OF9yethRF1bCopt1F+OvvfpZMWURRFRu19/oJyXcPTbKnJRgpl6gPGBu980WvdkElul3Bs4eEzlZpB0/MMEyYzGbmGpLTKKooScSLIuF8Zto4MxZUgqPF92a54GyPvMxaWkVRRWmQPvrOo0VQiW5X/9ZHqF1FSRO9+Pcewl9np0jRBO+eMmqtU4qDnf74T8dBxZXgaOHbmiiqKMXBTi9Ml9Ja+LYzlFcUVZrIw4cIdnqKhcPBdP78UcouiipNRI6nP333YNmWot9HUUVJgbZe6Capv4GsTtFPU41pZEEb/a3HS0ilmjPBNt7Mwu8MZ07ceYr8tPB6VIqq25dqHdcIf90wffzgP1j2lo9wUg0YB+rqDxJ6JaRYuJzxFsoliqrYiBz5fD4n5ZYvbaCoir9FRRZUD05KpFyiqIqBfvALa5q+pYKKoiqekCo4+jW5iqYgNYEyivqAmogXxQOdvVFLaHbNnngLtFqkqLoR7t7xf/TvvuiKWug3Z4LtFuizSFEVfwAhhD6/HrgeCP2fy+vyCWe+92rvjrc7byKFDkWVVlNJC+2aPREH0ynd7ta6lw8NH1Ibpo+nuo+iKp60Yfr4suzxlA8UVRRS1K4alZRi4V66dwKtSKaoihvNmWDbnUfNc4qqONFDk+zFmeNu8z4cFFVxE073plhXTRlH5ZNuunW+jhRsPqj2J2PeEoQQL4qHvumD//mqL3DpegB+n//PUt7Bz5Mtt0PTTooqSjSyQIkSRRUliipKFFWUKKooUaKookRRRYmiihIliipKFFWUbgNSOF0WHC2B43Wy/2TsScb7HmDvykGs8pmrt6YMIWRasIrNnKl4Af/xyeCZDxh7kmVlueIFgWP7hc5WdkquaWGRlqmLfk/gz/uEjvO4YyKbPpWddp9p0eqoLTREvyf40ft863F8L5edz2bNMv2yBH9RMnJ1lpXlih1dRLfLd2CL7AL8n2qkfaWK8xfdqh8TYOxJiqsI9XSFLneKnusIIUNyKnPHBDKjQj1dyqIoGns5pWddDjY3KLz1xlqEkKmg2PzQv0cyF27hcuapocr/3kvQMUzxdoSQ0NkqjauB1/4Pdvvrq+VPcLYLzvZAY60xr9D65A61DSA4WiJ7DPNtTXxbk7++2vbMPu6euYqrMy9/VhlVfk/kBfg/SaQXVXzrcW/NerW/Wkur4EA9bP4HA4f2Av+ZsSlibzfeh9andhrSsxSf07fhF2pDGPMKzcufVYMXKRPGWlo1OK2P3odtHWisFT47l7DloNo7U0M9bkIXPHtI9x7FPMKQYsammOavYO+cIXz5CX/+KIwSbG5QE4qhni4MKWZsivG+xWxGTujK14EP3wJee3aUJO48FceGQealZYYJk5V2fOown6zxG62BY/t9dRVcdr61tIqbPgdwH3J28O3n+NbjfZsXJzz/nposiGSF6HYFPnzLX1/NXzyLP2keA6rC8W7MWwJfOvDVVQjOdn/DHvPDT8eAg9N/HBQzB/cMB1WCowW2KZedb11bjVfF3TPX/PDToBb99dWBxlo2I0e2ZUW/p79imcSvbUfC96j54adDPV39FcvE3u7+imX26qaYtg2JjXN+dRObWgmOFl9dhWXVCzKeG9KzTOlZpoVFvgNb+rc+Yn/lvMZ2bYw9yfzw0+bCtf3lS/o2LbbvPjssa52xJ5kWFhnzChFC/vrqkLND88qEwIdvgbxFCIm93THcG2HBeHatAzFjLXs1khGM2WYuXMtl5yOEvDXrhwwkCN7qp0Ag2Z7ZFyn2DclpCRtrYYa+d7bdAlYzfE/AmFdI2MaWxzZz2fl9mxYjQYjh0SxrnPuo2NutaN7F7ANaVlcyY1MQQv5DNVpB9cUFeJfW9Xvh3sCpd3XqvrOH4FEJG2sVDVJYsLXs1chJhq5+C0rcvLQs0nLCOxj0fqCxVjf0Rw/5Dmxh06dan9xBxod1bTVCKPjXw7HJ4NkPIoRC330ZB1QxZpt5yVqEEH/xrFYonDsMgsqQnAb3BhprY9sZYRY9mIpqBiaepOXXm2STFBzSV4rMhWvJen/M/ktj9l8iD/GjIP7iWdODa6KqcsaexN09m79w4mbGq5jEcaAmtCBD9HvAeTTOfRQDHASYPjaBTx59YcmpMEncV1i4dEHSwuxtkZAu+j1ib7dGn4DLmaddTGC9gRBi78qJzVpXFZmZuVinRLVDhfa/SjLg/mWwLdj0qYKz3V//su13+3WwCSHE/kt2dFT95E7pru+dTHoWQkj47BxCiJ12n8bAD2O2xaXfcPD0HxV9wJH+pJv4vTOcD1E3IexAVbsicl0n3zUVFCtu0WHV2IQud0blS+Do6+Cv4emaH/lPz44Svq0ppjWA7Sm97zsmaPEtJFh3dYAug6ADm5GjMfBjzCu0llYP/+1GxtVw4GaYqILYrILtu7KcsScJXR1IcyNuYKnodkV9IxBA9h/cgxCyLlodc7wqOsBTp0TFARjIprDh2an34jcq8/w1s7Nfi2CT+GUbM2QnXPn6BmsiLjufGZM0EvEqTTZALFs38kq1QKi1tMp47wNqtoQeVIlXr6hNQlH1IoQYmz08/A9KMHBob0yowjsbix8tgg1D35hXGGxuEDrOD1l/7oLIvvvASi5nXlzerqWkcoQ0HVmUgu7TIn6wKxMp2GzP7JPJDt++TeL1HwiQ0omqUM9lmZYhqF74RfErjIKzXXS7YrJduOx8vq1JuHQhKhyxx4ffKDslN9jcIPvMGmO2xaCFNcjI0UPAWMHRqgXToStfQ5AvUh3JbreurXavmxU48RYhBqbHBwwc2gsvOMpEnR1RPxUE0dEYHIWsWQih4LkjUd1P8JPDJ4ltfP7jk8Q90yVzSgaR2tURRXiPsq+JcNn5GuMF/PmjwFstYLWsesFXV6F29qwHVfzHJwErXO6CKIKqpREhxIxNGfPG5xABCv8xFRTrQdWdMyBe4P3DMySwHtsvnXaHTdIwaZokcV57jnDgD+6FDCJwKqBmkwlftWk0CW40qnIXBJsbyLsIIeT/YLfgbDfOLND4WNO8FWz6VN++TfFBleh2eV97DrhsmreCqIEE8H1M81coKmDjfQ+g2E9vuHvmmpeWIYSCzQ2BY/tVdF+Lr64Cdmr4JBmzLeH59yRQ7ilTlHYhZwdE1yyrXgiHiCEtE7w5ha9qCQI4RFGF940n08IiU0GxZ0cJQa4IjhZ/fbW1tCqGqC/LWp/aybc1qXUhMJB1Af4RHC2eF4vc62bhsxdyLBEHOdV2AJs5U/H0RrzuCh83/AfeKD7m89VVeF4sChzbDywT3a5g80FvTRnYcHBQKJskmznTsuoFhBDf1tRfvgTfC4v1f7C7b/NiuFe2Z8zLn4VfPFuWC44WCZGCEHJ29JcvAZ6Yl/5WLf6ivBx1eRlHgmO+/oplgqNFtiVEt4v/+GT/1kdMBcWxOuOG9CxTQbHv7UrFj9cp9FkINh8k5O4gpfQdhND1oozwP3lryoLNDczYFMUzbSx4QZ6NeeNzxLJwi5ZxRb+n79l5OElIkQiH8OSBmLEpCRtrIzeu78AWEGNqFowsqBvq6SLkJw0zHgbvSGMmjOj3eLYsl+yW7Hwud4HY34uzhgi5aNeLMkhJQYLgLsvn7p4duYoYfEAuO9+0aDU79V5NgTLIYltCPHGb8ytAlfDFBbX8HrWwSuL2E5DxoiD2C4pNi1YTDGfrkzu4nHm+tysjcWkqKLY8tlmRxZaV5dyM+72vPRd5lxS8uYFkSE6F5BGN7ErYdlhwtATPHRbdLjAPjHmFUfNmjXmFpHfNsrb/eCVwvC7SkVeQVYqHGGpJqzLXSbpMEEJXv0UIGe6YSFaU4XeJbhf5W6AKcxCE0NVvxatXQj2XGdsYQ+qUqPNUvFdLuq3qXWprHGAC4WXfql+gpJ2GKI2AKKUsoERRRYmiitJtSdF9QNHvCX3zGd92Ruy7ymbksJm5ihYxBMQIOUOEC0S3K/Tdl3zbGYSQYcJk2RCi38O3HteyGBzvCDk7hK4OQ3KqmmspOFrA3A6/AAZibGPU8o/xTLjcBWo+ATw5Kh8ifTo1dyHU0yU4WhWnSp5J5DIJrVOH+HaZuXCKSmAguCOQlBx5GUf2d3zvbBsapKlVi+hAiIuQM6R8gcIQ8qCR6HaR42eRqPK+ukFwthOiZYHjdcHmBmNeoTX8VQ0MJCu/Ubhg5ynldykInl3rxN7uyPCVjA/aQ2WCo9Vbs151qmozUVqmRjYm7jzFXzgBsSFCvCpw4i0IUtie2adVA4pul2f74/h9c9n5xrxCiIaLvd19mxerHZhopxEaAtce6i7m6f/vYp1p9QN1H3xbk47QOayacLpywwiXUvr/d7vau8PHYpGiXVVW+f/0eynhbmhgEBfN+eoqjPcvG855qsYhDMlpsiAyBMcVQ/xoaO1h4NS7agX45Lfre2ebjhuh7kP6nVhMK5s8rrVECHmr1iRsOzwSWJGxER+iKMbozUvL/PXVweYGxS4HuNjfUlIZg7UePHcEIWTMK7SsLA+P8hmS0xK3S8kVOCddDwkCLrFXGKLyiO4hwvMgdBfz6KjcwnUfIG5xbpkWCq+1FJzt+uYcXzIXroWFeHatk80n5OwA/WgqKFbUjwY1JQKS3LRglQILzDY43/W/95LuSYf+0Qm/mH7xqCKXYQicl6IVq44WXEeKtVKscwNuxqoH8Qaw/ua/AByx4hJzmxyUv0HEsrAQsbdbVirofXUDcAkfumtCFdZrOO1TrndLKq2lVaYH1+ieMzMuRXoZKqlwMARU5sSqg9j0qdw9cyXo178c69xwBXPgRAzpX7DHwM6QxFVLo07mjI6THMxDb816fJgWbD4IZqvl15vU7B+D2qogT833dqXihjMkpxnzluisZRi5IQa0KtQeQgkGFPPEFsRLz4KkQnLGo8x6lTreLP0tgqwy0MXapZ0gwAYIr0e6+Wb7gNkkme2C4Hu7EvYt4dWo2lUgh8Ar8daURWbnDJ/iPgT/6V+kEMPsB9HQYp6YufnYZpA33qo1WpCB6z6g6hJQJfZ2a9S/IWeHZ/vjkfVIN50MyWmQJhlorA31dPkb9kgJdk/t1BMFNeYtYWxjIPEj2NwgJexqTobRGF6K7xCDtYf2JNDjUFcTazEPtio8O0oEZzs581/aygf3gPUKbgcupg0cr7MqBRK9NesVo0emgmJu+r+h0USmX5ZAGyZv1RqckkVOHDWQ1Wri9hOWVS+AqgJt4tlR4n5ihu/Alrj4KXEcQrH2EOxfKObRMTdwyqLqwZCzQ3JuwjwPkMTB5oaYBHDw3BF9vQJGjnDTClzbYlldGUXCRX2iaWFRwrbD9lfOh7/7QGOtuyw/LjoxXkMM6qABxYfCugDEWnaB2adFD+K6j/AdjAsxFIMj5qVliTtPDf5sOwKpz2Jvd//WR+JubAxfq+D3Yi2tiqpGtJ4uQ0AlYdth+/98AjtY7O0OfvR+PPcEHuKV8zqGwPEh9xMzrhdlSD+P/3Q4qGLMNhwmUG3EM1D3IfZ2D45blOF+Yka4byjn+4TJhuS0wZ/0LNPCIvsr5wHEOgzBEdeDA/6+lqxXg5o2UUvXZ8w2a2k1OJzhgT6p41nfNbUHSpelZeGQmOoQ9iRraTU8UGMsMWrtoe7TG6wHvTXrQ5c7FUAVTWFp17+MPUlyHg/tRaOWNHTUUbbWfQe2BJsbCEekXO4Cvq1JigKzLELIkJYpONuFzlbFDqqDIt0qfWkdTD/SELMWQfdYTYJqIDIUWd6OEILzH32nNwghy8py8CSgak1up9e/DJvKuj4CCt5+KNqJtRWqxlWPWlKWVdAgihDpARHCZedj5BomZiCE+ItnFW/BZ3M4wA8hJcIQoLM0FdkNdIg0Ly0bolYGfiQBoPf0hrEnQQO+yDoI0e8BF8E491GFoQfiXuAhal/IKCwtjAOqcO8yz5blMukt+j3emjLYTOHeFtT9ib3dvtc3yV4e1DGCRxo5hLf6qcghPC8WSV6VhuANzhRQqz0EVIUHtHSYq4pvGhtAamcA2otpRbcLR4M0FqePWuJUFXxBcaCxVnC2u9fNMuYVgvQabIkORxNhkRVDehYEh4LNDfzFs9zds9kpuaErX4Uud+KGGeHHRngIvq1J4xDq3vjhSBdMthwpenT0dbWMvKgEXSvkAnWg5YSaW8TelQP9zYMtjeaw6QUO7Q3vgBDqcmCtx4xNIfeYHGKr7Nuk2MZoOJ8IGClUoYHyN8+OEgi6yMoyIzst4zBGsLkhPKqJOZWwsVZ2vq1jCEWLTcp9mL+C7MJ4a9braMUm04PhoUt8SkMSqCxrmr/CX1/tr682F67FBoOayQjtvrX3mJS1uBlCNw9VUSq3RLdL+OLvwpefQNsnNmsWe+cM9q6fEY4/oT280Nka6nIY0jIZexKbkUNod6RjiPAsXtHt4j89jaLl2uKUXLiLkGGMhjaal8vF5oN4LMj9jT700BkS0nwV85LJGcaqlk1yKps5U3GZsieT16vvYloPSOlGWeuUKFFUUaKookRRRYlSrPT/T4m4BchMr1YAAAAASUVORK5CYII=" alt="Dialogue for Sustainability"></a>
+    <div class="links">
+      <a href="index.html" class="on">About DfS</a>
+      <a href="providers.html">Service Providers</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="kick">The methodology</div>
+    <h1>Dialogue for Sustainability</h1>
+    <p>A process-consultation approach that brings together representatives from every tier of a company — as a Change Management Team — to work toward shared social, economic and environmental goals.</p>
+    <div class="pillars">
+      <span class="pil"><i style="background:var(--social)"></i>Social</span>
+      <span class="pil"><i style="background:var(--econ)"></i>Economic</span>
+      <span class="pil"><i style="background:var(--eco)"></i>Environmental</span>
+    </div>
+    <div class="heroBtns">
+      <a class="btnP" href="providers.html">Find a service provider →</a>
+      <a class="btnS" href="#how">How DfS works</a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="kick">Why choose DfS</div>
+    <h2>Beyond the audit approach</h2>
+    <p class="body">The audit approach increasingly finds itself ineffective in helping achieve social, economic and environmental sustainability goals — a problem Pakistani companies share. Audits focus on <b>forcing compliance</b> rather than <b>owning the process</b> that drives sustainability. That gap is where the need for an alternative was felt.</p>
+    <p class="body">GIZ introduced <b>Dialogue for Sustainability (DfS)</b>: a process-consultation approach designed to bring together representatives throughout the organisational hierarchy, working as a <b>Change Management Team (CMT)</b> toward the common goal of sustainability in day-to-day operations.</p>
+  </section>
+
+  <section class="sec alt">
+    <div class="kick">Major wins with DfS</div>
+    <h2>Results from partner factories</h2>
+
+    <div class="rgroup">
+      <h3><i style="background:var(--social)"></i>HR &amp; Labour Standards</h3>
+      <div class="stats">
+        <div class="stat s"><div class="n">52%</div><div class="l">Average reduction in worker turnover</div></div>
+        <div class="stat s"><div class="n">31%</div><div class="l">Average reduction in absenteeism</div></div>
+        <div class="stat s"><div class="n">↑</div><div class="l">Improvement in two-way communication</div></div>
+      </div>
+    </div>
+
+    <div class="rgroup">
+      <h3><i style="background:var(--econ)"></i>Productivity</h3>
+      <div class="stats">
+        <div class="stat e"><div class="n">46%</div><div class="l">Average reduction in order lead time</div></div>
+        <div class="stat e"><div class="n">24%</div><div class="l">Average improvement in efficiency</div></div>
+        <div class="stat e"><div class="n">7%</div><div class="l">Average reduction in DHUs</div></div>
+        <div class="stat e"><div class="n">61%</div><div class="l">Average reduction in machine downtime</div></div>
+        <div class="stat e"><div class="n">45%</div><div class="l">Average reduction in work in process</div></div>
+      </div>
+    </div>
+
+    <div class="rgroup">
+      <h3><i style="background:var(--eco)"></i>Environment</h3>
+      <div class="envgrid">
+        <div class="env">
+          <div class="h">Energy efficiency</div>
+          <div class="v">13.4 <em>→</em> 12.8 kWh/kg</div>
+          <div class="d">Reduction in power consumption per kg of fabric</div>
+        </div>
+        <div class="env">
+          <div class="h">Steam</div>
+          <div class="v">13.1 <em>→</em> 9.7 kg</div>
+          <div class="d">Reduction in steam production per kg of fabric</div>
+        </div>
+        <div class="env">
+          <div class="h">Water management</div>
+          <div class="v">163.4 <em>→</em> 126.8 l/kg</div>
+          <div class="d">Reduction in water consumption per kg of fabric</div>
+        </div>
+        <div class="env">
+          <div class="h">Chemical management</div>
+          <div class="v">ZDHC implemented</div>
+          <div class="d">With appropriate KPIs developed for partner factories</div>
+        </div>
+      </div>
+      <p class="body" style="margin-top:12px;font-size:14px">Improved environmental management practices at partner factories, including regular EMS risk assessments and other best practices.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="how">
+    <div class="kick">How DfS works</div>
+    <h2>From baseline to endline</h2>
+    <div class="flow">
+      <div class="fstep">
+        <div class="fn">1</div>
+        <h4>Baseline / GAP analysis</h4>
+        <p>Gives a true picture of existing practices and identifies gaps against best practices.</p>
+      </div>
+      <div class="fstep">
+        <div class="fn">2</div>
+        <h4>Form the CMT</h4>
+        <p>The partner and its C-suite assemble a Change Management Team with representation from all organisational tiers.</p>
+      </div>
+      <div class="fstep">
+        <div class="fn">3</div>
+        <h4>CMT workshops &amp; mini-CMTs</h4>
+        <p>Two-day thematic workshops — day one on value-added trainings, day two on the six-step approach. Regular site visits monitor implementation on the shop floor.</p>
+      </div>
+      <div class="fstep">
+        <div class="fn">4</div>
+        <h4>Endline assessment</h4>
+        <p>Once action-plan items are addressed, the engagement closes with a third-party endline assessment.</p>
+      </div>
+    </div>
+    <span class="dur">Typical engagement: 6–18 months</span>
+  </section>
+
+  <section class="sec alt">
+    <div class="kick">Using 6 steps for success</div>
+    <h2>A logical problem-solving sequence</h2>
+    <div class="six">
+      <div class="st"><div class="num">01</div><div><div class="sn">Step 1</div><div class="sv">Identify problem</div></div></div>
+      <div class="st"><div class="num">02</div><div><div class="sn">Step 2</div><div class="sv">Cause analysis</div></div></div>
+      <div class="st"><div class="num">03</div><div><div class="sn">Step 3</div><div class="sv">Goal analysis</div></div></div>
+      <div class="st"><div class="num">04</div><div><div class="sn">Step 4</div><div class="sv">Find solutions</div></div></div>
+      <div class="st"><div class="num">05</div><div><div class="sn">Step 5</div><div class="sv">Agree on solutions</div></div></div>
+      <div class="st"><div class="num">06</div><div><div class="sn">Step 6</div><div class="sv">Action plan</div></div></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="kick">What makes DfS so effective</div>
+    <h2>Three things that change the outcome</h2>
+    <div class="eff">
+      <div class="ecard">
+        <div class="en">01 · A game changer</div>
+        <h4>Communication</h4>
+        <p>DfS establishes effective communication channels at factory level to build trust between top management, supervisors and workers.</p>
+        <div class="tiers"><span>Top management</span><span>Managers</span><span>Supervisors</span><span>Workers</span></div>
+      </div>
+      <div class="ecard">
+        <div class="en">02 · A change enabler</div>
+        <h4>Training &amp; development</h4>
+        <p>Offers multi-tiered development of the workforce through thematic-area CMT workshops, mini-CMTs and peer-to-peer learning.</p>
+        <div class="tiers"><span>CMT workshops</span><span>Mini-CMT workshops</span><span>Peer-to-peer learning</span></div>
+      </div>
+      <div class="ecard">
+        <div class="en">03 · An approach</div>
+        <h4>Logical problem-solving</h4>
+        <p>DfS helps identify, analyse and solve problems together as a team. The six-step approach follows a logical sequence to approaching and addressing key problems.</p>
+        <div class="tiers"><span>Identify</span><span>Analyse</span><span>Solve — together</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Interested in DfS for your company?</h2>
+    <p>DfS is delivered by certified Local Service Providers across Pakistan. Browse the providers to find the right fit for your sector — or get in touch and we'll help you choose.</p>
+    <p style="margin-bottom:22px"><a class="btnP" style="background:#fff;color:#1B2A38" href="providers.html">Browse service providers →</a></p>
+    <div class="cbtn">
+      <div class="cn">Saham Nasir</div>
+      <div class="cs">Business Development Advisor · GIZ-Pakistan</div>
+      <a href="mailto:saham.nasir@giz.de">saham.nasir@giz.de</a>
+      <a href="tel:+923011129828">+92 301 1129828</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <b>Dialogue for Sustainability</b> · This programme, supported by the German Government and co-funded by the European Union, is being carried out on behalf of the Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH.
+  </footer>
+
+</div>
+</body>
+</html>
